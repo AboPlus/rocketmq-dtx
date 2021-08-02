@@ -27,6 +27,7 @@ public class Producer {
             String s = new Scanner(System.in).nextLine();
             // Topic 相当于是一级分类，Tag 相当于是二级分类
             Message msg = new Message("Topic1", "Tag1", s.getBytes());
+            msg.setDelayTimeLevel(3);//延时时间 等级3：10s
             // 发送Message
             SendResult result = prducer.send(msg);
             System.out.println(result);
